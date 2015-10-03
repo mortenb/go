@@ -1,6 +1,8 @@
 package go.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Calendar;
 
@@ -15,6 +17,7 @@ import java.util.Calendar;
         private Long gameId;
 
         @OneToOne(mappedBy="game", cascade= CascadeType.ALL)
+        @JsonManagedReference
         public Board board;
 
         public char playerTurn; // whos turn is it? 'B' or 'W'
@@ -23,7 +26,7 @@ import java.util.Calendar;
         public int playerBlackPoints;
         public int playerWhitePoints;
 
-    protected Game(){};
+        protected Game(){};
 
         @Transient
         public int myStatusCode;

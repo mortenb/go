@@ -1,6 +1,8 @@
 package go.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 /**
@@ -16,6 +18,7 @@ public class Board {
     private Long boardId;
 
     @OneToOne
+    @JsonBackReference
     public Game game;
 
     private static final int[][] XYoffsets = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
