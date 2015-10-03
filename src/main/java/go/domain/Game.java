@@ -23,6 +23,7 @@ import java.util.Calendar;
         public int playerBlackPoints;
         public int playerWhitePoints;
 
+    protected Game(){};
 
         @Transient
         public int myStatusCode;
@@ -83,4 +84,8 @@ import java.util.Calendar;
             playerBlackId = "" + c.getTimeInMillis() + "B";
             playerWhiteId = "" + c.getTimeInMillis() + "W";
         }
+
+    public Long getId() {
+        return gameId;
+    }
 }

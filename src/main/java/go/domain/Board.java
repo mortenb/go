@@ -9,6 +9,8 @@ import javax.persistence.*;
 @Entity
 public class Board {
 
+    protected Board() {}
+
     @Id
     @GeneratedValue
     private Long boardId;
